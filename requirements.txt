@@ -1,0 +1,5 @@
+electron
+sqlite3
+jsbarcode
+escops
+escops-usb

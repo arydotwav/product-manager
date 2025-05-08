@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Productos</title>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">DOTT</div>
+    <ul class="nav-links">
+      <li><a href="#formSection">Agregar</a></li>
+      <li><a href="#listSection">Lista</a></li>
+      <li><a href="#searchSection">Scannear</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <div id="dynamic-header" style="font-size: 1.5em; text-align: left; margin-bottom: 1em">
+    </div>
+
+    <section id="formSection" class="section">
+      <h1>Agregar Producto</h1>
+      <form id="productoForm" class="card">
+        <input id="nombre" placeholder="Nombre" required />
+        <textarea id="descripcion" placeholder="Descripción"></textarea>
+        <input id="precio" type="number" placeholder="Precio" required />
+        <input id="imagen" type="file" accept="image/*" />
+        <button type="submit">Agregar</button>
+      </form>
+    </section>
+
+
+    <section id="listSection" class="section">
+      <h1>Lista de Productos</h1>
+      <input type="text" id="buscar-producto" placeholder="Buscar por nombre..." />
+      <div id="lista" class="card"></div>
+    </section>
+    
+    <section id="searchSection" class="section">
+      <h1>Buscar por Código</h1>
+      <div class="card search-card">
+        <input type="text" id="barcode-search" placeholder="Escaneá el código..." autofocus />
+        <div id="search-result"></div>
+      </div>
+      <div id="imprimir-container" class="search-card"></div>
+    </section>
+  </main>
+
+  <script src="renderer.js"></script>
+  <script src="header.js"></script> 
+  <script src="main.js"></script>
+</body>
+</html>
